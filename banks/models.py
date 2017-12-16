@@ -5,7 +5,7 @@ from django.db import models
 
 # Create your models here.
 class Bank(models.Model):
-	name = models.CharField(max_length=50)
+	name = models.CharField(max_length=49)
 	id = models.AutoField(primary_key=True)
 
 	def __str__(self):
