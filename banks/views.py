@@ -25,7 +25,7 @@ def bankdetails(request):
 			}
 		}
 	except Exception as e:
-		resp = {"status":"error", "message":e.message}
+		resp = {"status":"error", "message":"Object does not exist"}
 
 	return HttpResponse(json.dumps(resp, indent=2))
 
@@ -41,6 +41,6 @@ def bankInCity(request):
 			'bank_branches' : branches
 		}
 	except Exception as e:
-		resp = {"status":"error", "message":e.message}
+		resp = {"status":"error", "message":"Object does not exist"}
 
 	return HttpResponse(json.dumps(resp, indent=2))
