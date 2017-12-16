@@ -5,7 +5,7 @@ from django.db import models
 
 # Create your models here.
 class Bank(models.Model):
-	name = models.CharField(max_length=49)
+	name = models.CharField(max_length=50)
 	id = models.AutoField(primary_key=True)
 
 	def __str__(self):
@@ -20,11 +20,11 @@ class Bank(models.Model):
 class Branch(models.Model):
 	ifsc = models.CharField(max_length=11, primary_key=True)
 	bank = models.ForeignKey(Bank)
-	branch = models.CharField(max_length=74)
-	address = models.CharField(max_length=194)
+	branch = models.CharField(max_length=100)
+	address = models.CharField(max_length=500)
 	city = models.CharField(max_length=50)
 	district = models.CharField(max_length=50)
-	state = models.CharField(max_length=26)
+	state = models.CharField(max_length=50)
 
 	def __str__(self):
 		return self.ifsc + '-' + self.branch + '-' + self.city + '-' + self.state
