@@ -10,8 +10,8 @@ def index(request):
 
 def bankdetails(request):
 	ifsc_code = request.GET.get('ifsc_code')
-	branch = Branch.objects.get(ifsc=ifsc_code)
 	try:
+		branch = Branch.objects.get(ifsc=ifsc_code)
 		bank = Bank.objects.get(pk=branch.bank_id)
 		resp = {
 			'branch' : {
